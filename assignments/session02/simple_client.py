@@ -17,10 +17,11 @@ def client(msg):
         sock.sendall(msg)
         while not done:
             chunk = sock.recv(bufsize)
-            if len(chunk) < bufsize:
+            if not chunk:
                 done = True
             response += chunk
         print >>sys.stderr, 'received "{0}"'.format(response)
+
     finally:
         print >>sys.stderr, 'closing socket'
         sock.close()
