@@ -38,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'south',
     'myblog',
+    'ckeditor',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -82,6 +83,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = '/Users/dignoto/training.python_web/assignments/session07/mysite/myyblog/static'
+
+CKEDITOR_UPLOAD_PATH = "myblog/uploads/"
 
 TEMPLATE_DIRS = (os.path.join(BASE_DIR, 'mysite/templates'),)
 

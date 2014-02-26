@@ -1,4 +1,5 @@
-from django.conf.urls import patterns, url
+from django.conf.urls import patterns, url, include
+#from django.conf.urls.defaults import include
 
 urlpatterns = patterns('myblog.views',
     url(r'^$',
@@ -7,4 +8,5 @@ urlpatterns = patterns('myblog.views',
     url(r'^posts/(?P<post_id>\d+)/$',
         'detail_view',
         name="blog_detail"),
+    url(r'^ckeditor/', include('myblog.ckeditor_urls')),
 )
