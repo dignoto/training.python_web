@@ -1,5 +1,4 @@
 from django.conf.urls import patterns, url, include
-#from django.conf.urls.defaults import include
 
 urlpatterns = patterns('myblog.views',
     url(r'^$',

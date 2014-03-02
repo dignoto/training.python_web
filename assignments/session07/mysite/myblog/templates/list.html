@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h1>Recent Posts</h1>
+  <h1 style="text-align: center;">Recent Posts</h1>
 
   {% comment %} here is where the query happens {% endcomment %}
   {% for post in posts %}
@@ -10,10 +10,10 @@
       <a href="{% url 'blog_detail' post.pk %}">{{ post }}</a>
     </h2>
     <p class="byline">
-      Posted by {{ post.author_name }} &mdash; {{ post.published_date }}
+      Posted by {{ post.author }} &mdash; {{ post.published_date }}
     </p>
     <div class="post-body">
-      {{ post.text }}
+      {{ post.text|safe }}
     </div>
     <ul class="categories">
       {% for category in post.categories.all %}
@@ -21,5 +21,6 @@
       {% endfor %}
     </ul>
   </div>
+  <HR style="width:35em;border:1px solid #000;">
   {% endfor %}
 {% endblock %}

@@ -56,6 +56,11 @@ ul#entries li:first-child div.entry {
 div.entry-body {
     margin-left: 2em;
 }
+div.post{
+	h2 color:red;
+	text-align: center;
+	color:green;
+}
 .notification {
     float: right;
     text-align: center;
